@@ -1,0 +1,25 @@
+{
+  "name": "@progressivewebcomponents/web-share",
+  "description": "Web Share API vanilla web component",
+  "author": "Alexey Rodionov <fluorescent.hallucinogen@gmail.com>",
+  "keywords": [
+    "web-component",
+    "custom-element",
+    "es-module",
+    "esm",
+    "html-imports",
+    "vanilla",
+    "share",
+    "web-share",
+    "web",
+    "api",
+    "pwa",
+    "progressive-web-apps"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ProgressiveWebComponents/web-share.git"
+  },
+  "main": "web-share.js"
+}
