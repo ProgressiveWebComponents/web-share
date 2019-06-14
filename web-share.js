@@ -76,33 +76,33 @@ class WebShare extends HTMLElement {
   share() {
     if (this.supported) {
       navigator.share({
-          title: this.header,
-          text: this.text,
-          url: this.url,
-        })
-        .then(() => {
-          /**
-           * @event web-share-success
-           */
-          this.dispatchEvent(new CustomEvent('web-share-success', {
-            bubbles: true,
-            composed: true
-          }));
-        })
-        .catch((error) => {
-          /**
-           * @event web-share-error
-           */
-          this.dispatchEvent(new CustomEvent('web-share-error', {
-            detail: {
-              message: {
-                error
-              }
-            },
-            bubbles: true,
-            composed: true
-          }));
-        });
+        title: this.header,
+        text: this.text,
+        url: this.url,
+      })
+      .then(() => {
+        /**
+         * @event web-share-success
+         */
+        this.dispatchEvent(new CustomEvent('web-share-success', {
+          bubbles: true,
+          composed: true
+        }));
+      })
+      .catch((error) => {
+        /**
+         * @event web-share-error
+         */
+        this.dispatchEvent(new CustomEvent('web-share-error', {
+          detail: {
+            message: {
+              error
+            }
+          },
+          bubbles: true,
+          composed: true
+        }));
+      });
     }
   }
 
@@ -134,6 +134,7 @@ class WebShare extends HTMLElement {
   }
 
   connectedCallback() {
+    // Set `supported` value in `connectedCallback()` instead of `constructor()` for compatibility with Polymer data binding
     this.supported = 'share' in navigator;
   }
 }
